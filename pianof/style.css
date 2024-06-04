@@ -1,0 +1,179 @@
+body {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: #333;
+    height: 100vh; /*compatibilità schermo*/
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tastiera{
+    display: flex;
+    align-items: center;
+}
+
+.tasti{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.formatasti{
+    height: 20rem;
+    width: 3.5rem;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.tastobianco{
+    background-color: aliceblue;
+    width: 4.2rem;
+    border: 5px solid #000;
+    text-align: center;
+}
+
+.tastonero{
+    background-color: black;
+    height: 15rem;
+    width: 1.8rem;
+    z-index: 5;
+    margin: 0 -18px 0 -18px;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+}
+
+.testo{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.note{
+    display: block; 
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 7px;
+    font-size: 15px;
+    transition: opacity .3s ease-out;
+}
+
+li:hover .note{
+    opacity: 1;
+    
+}
+
+/* stile per il metronomo */
+.mcontainer {
+	background-color: #333;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    height: 30%;
+	margin-bottom: 2%;
+	position: sticky;
+	
+  }
+  
+  .metronome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+  }
+  
+  #canvas {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+
+  }
+  
+  button {
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #999;
+  }
+  
+  .bpm-form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+	color: #fff;
+
+  }
+  
+  .bpb-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+	color: #fff;
+
+  }
+  
+  #beatList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+	color: #fff;
+
+  }
+  
+  .butto {
+    padding: 0;
+    flex-grow: 1;
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+  }
+  
+  .acctbtn {
+    flex-grow: 1;
+    border: none;
+
+  }
+  
+  .accent {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 1px 1px 3px black;
+  }
+  
+  .noAccent {
+    box-shadow: 1px 1px 3px black;
+  }
+  
+  .bpb-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+  
+  label{
+	color: #fff;
+  }
+
+  #addBpb,
+  #minusBpb {
+    flex-basis: 0;
+    margin: 0px 2px;
+    flex-grow: 1;
+  }

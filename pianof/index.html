@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pianoforte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- metronomo -->
+    <section class="mcontainer">
+		<div class="metronome-container">
+  
+		  <canvas id="canvas" width="250" height="250" class="beat-display"></canvas>
+  
+		  <div class="bpm-container">
+			<label for="userBpm">BPM</label>
+			<form oninput="output.value = userBpm.value" class="bpm-form-container">
+			  <input type="range" id="userBpm" name="userBpm" min="40" max="220" value="60">
+			  <output name="output" for="userBpm">60</output>
+			</form>
+		  </div>
+		  <div class="bpb-container">
+			<ul id="beatList">
+			  <li class="butto"> <button type="button" value=1 id="beat-1" class="acctbtn accent">1</button></li>
+			  <li class="butto"> <button type="button" value=0 id="beat-2" class="acctbtn noAccent">2</button></li>
+			  <li class="butto"> <button type="button" value=0 id="beat-3" class="acctbtn noAccent">3</button></li>
+			  <li class="butto"> <button type="button" value=0 id="beat-4" class="acctbtn noAccent">4</button></li>
+			</ul>
+			<div class="bpb-btn-container">
+			  <button type="button" name="minusBpb" id="minusBpb">—</button>
+			  <button type="button" name="addBpb" id="addBpb">+</button>
+			</div>
+		  </div>
+  
+		  <button type="button" id="start">Start</button>
+  
+		</div>
+	  </section>
+<!-- pianola -->
+<div class="conteiner">
+    <div class="testo"> 
+        Pianoforte. <br>Premere i tasti con il cursore per suonare
+    </div>
+    <div class="tastiera">
+      <ul class="tasti">
+    
+        <li class="formatasti tastobianco" data-list="01" onclick="changeColor(this)">  <span class="note" data-list="01">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="02" onclick="changeColorBlack(this)">  <span class="note" data-list="02">LA#</span> </li>
+        <li class="formatasti tastobianco" data-list="03" onclick="changeColor(this)">  <span class="note" data-list="03">SI</span> </li>
+
+        <li class="formatasti tastobianco" data-list="04" onclick="changeColor(this)">  <span class="note" data-list="04">DO</span> </li>
+        <li class="formatasti tastonero" data-list="05" onclick="changeColorBlack(this)">  <span class="note" data-list="05">DO#</span> </li>
+        <li class="formatasti tastobianco" data-list="06" onclick="changeColor(this)">  <span class="note" data-list="06">RE</span> </li>
+        <li class="formatasti tastonero" data-list="07" onclick="changeColorBlack(this)">  <span class="note" data-list="07">RE#</span> </li>
+        <li class="formatasti tastobianco" data-list="08" onclick="changeColor(this)">  <span class="note" data-list="08">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="09" onclick="changeColor(this)">  <span class="note" data-list="09">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="10" onclick="changeColorBlack(this)">  <span class="note" data-list="10">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="11" onclick="changeColor(this)">  <span class="note" data-list="11">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="12" onclick="changeColorBlack(this)">  <span class="note" data-list="12">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="13" onclick="changeColor(this)">  <span class="note" data-list="13">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="14" onclick="changeColorBlack(this)">  <span class="note" data-list="14">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="15" onclick="changeColor(this)">  <span class="note" data-list="15">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="16" onclick="changeColor(this)">  <span class="note" data-list="16">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="17" onclick="changeColorBlack(this)">  <span class="note" data-list="17">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="18" onclick="changeColor(this)">  <span class="note" data-list="18">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="19" onclick="changeColorBlack(this)">  <span class="note" data-list="19">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="20" onclick="changeColor(this)">  <span class="note" data-list="20">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="21" onclick="changeColor(this)">  <span class="note" data-list="21">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="22" onclick="changeColorBlack(this)">  <span class="note" data-list="22">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="23" onclick="changeColor(this)">  <span class="note" data-list="23">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="24" onclick="changeColorBlack(this)">  <span class="note" data-list="24">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="25" onclick="changeColor(this)">  <span class="note" data-list="25">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="26" onclick="changeColorBlack(this)">  <span class="note" data-list="26">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="27" onclick="changeColor(this)">  <span class="note" data-list="27">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="28" onclick="changeColor(this)">  <span class="note" data-list="28">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="29" onclick="changeColorBlack(this)">  <span class="note" data-list="29">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="30" onclick="changeColor(this)">  <span class="note" data-list="30">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="31" onclick="changeColorBlack(this)">  <span class="note" data-list="31">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="32" onclick="changeColor(this)">  <span class="note" data-list="32">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="33" onclick="changeColor(this)">  <span class="note" data-list="33">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="34" onclick="changeColorBlack(this)">  <span class="note" data-list="34">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="35" onclick="changeColor(this)">  <span class="note" data-list="35">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="36" onclick="changeColorBlack(this)">  <span class="note" data-list="36">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="37" onclick="changeColor(this)">  <span class="note" data-list="37">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="38" onclick="changeColorBlack(this)">  <span class="note" data-list="38">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="39" onclick="changeColor(this)">  <span class="note" data-list="39">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="40" onclick="changeColor(this)">  <span class="note" data-list="40">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="41" onclick="changeColorBlack(this)">  <span class="note" data-list="41">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="42" onclick="changeColor(this)">  <span class="note" data-list="42">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="43" onclick="changeColorBlack(this)">  <span class="note" data-list="43">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="44" onclick="changeColor(this)">  <span class="note" data-list="44">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="45" onclick="changeColor(this)">  <span class="note" data-list="45">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="46" onclick="changeColorBlack(this)">  <span class="note" data-list="46">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="47" onclick="changeColor(this)">  <span class="note" data-list="47">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="48" onclick="changeColorBlack(this)">  <span class="note" data-list="48">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="49" onclick="changeColor(this)">  <span class="note" data-list="49">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="50" onclick="changeColorBlack(this)">  <span class="note" data-list="50">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="51" onclick="changeColor(this)">  <span class="note" data-list="51">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="52" onclick="changeColor(this)">  <span class="note" data-list="52">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="53" onclick="changeColorBlack(this)">  <span class="note" data-list="53">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="54" onclick="changeColor(this)">  <span class="note" data-list="54">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="55" onclick="changeColorBlack(this)">  <span class="note" data-list="55">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="56" onclick="changeColor(this)">  <span class="note" data-list="56">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="57" onclick="changeColor(this)">  <span class="note" data-list="57">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="58" onclick="changeColorBlack(this)">  <span class="note" data-list="58">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="59" onclick="changeColor(this)">  <span class="note" data-list="59">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="60" onclick="changeColorBlack(this)">  <span class="note" data-list="60">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="61" onclick="changeColor(this)">  <span class="note" data-list="61">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="62" onclick="changeColorBlack(this)">  <span class="note" data-list="62">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="63" onclick="changeColor(this)">  <span class="note" data-list="63">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="64" onclick="changeColor(this)">  <span class="note" data-list="64">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="65" onclick="changeColorBlack(this)">  <span class="note" data-list="65">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="66" onclick="changeColor(this)">  <span class="note" data-list="66">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="67" onclick="changeColorBlack(this)">  <span class="note" data-list="67">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="68" onclick="changeColor(this)">  <span class="note" data-list="68">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="69" onclick="changeColor(this)">  <span class="note" data-list="69">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="70" onclick="changeColorBlack(this)">  <span class="note" data-list="70">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="71" onclick="changeColor(this)">  <span class="note" data-list="71">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="72" onclick="changeColorBlack(this)">  <span class="note" data-list="72">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="73" onclick="changeColor(this)">  <span class="note" data-list="73">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="74" onclick="changeColorBlack(this)">  <span class="note" data-list="74">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="75" onclick="changeColor(this)">  <span class="note" data-list="75">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="76" onclick="changeColor(this)">  <span class="note" data-list="76">DO</span>  </li>
+        <li class="formatasti tastonero" data-list="77" onclick="changeColorBlack(this)">  <span class="note" data-list="77">DO#</span>  </li>
+        <li class="formatasti tastobianco" data-list="78" onclick="changeColor(this)">  <span class="note" data-list="78">RE</span>  </li>
+        <li class="formatasti tastonero" data-list="79" onclick="changeColorBlack(this)">  <span class="note" data-list="79">RE#</span>  </li>
+        <li class="formatasti tastobianco" data-list="80" onclick="changeColor(this)">  <span class="note" data-list="80">MI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="81" onclick="changeColor(this)">  <span class="note" data-list="81">FA</span>  </li>
+        <li class="formatasti tastonero" data-list="82" onclick="changeColorBlack(this)">  <span class="note" data-list="82">FA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="83" onclick="changeColor(this)">  <span class="note" data-list="83">SOL</span>  </li>
+        <li class="formatasti tastonero" data-list="84" onclick="changeColorBlack(this)">  <span class="note" data-list="84">LAb</span>  </li>
+        <li class="formatasti tastobianco" data-list="85" onclick="changeColor(this)">  <span class="note" data-list="85">LA</span>  </li>
+        <li class="formatasti tastonero" data-list="86" onclick="changeColorBlack(this)">  <span class="note" data-list="86">LA#</span>  </li>
+        <li class="formatasti tastobianco" data-list="87" onclick="changeColor(this)">  <span class="note" data-list="87">SI</span>  </li>
+
+        <li class="formatasti tastobianco" data-list="88" onclick="changeColor(this)">  <span class="note" data-list="88">DO</span>  </li>
+        
+       </ul>
+    </div>
+</div>
+<audio id="accent" src="high-beep.wav" preload="auto" type="audio/wav">audio non supportato</audio>
+<audio id="noAccent" src="low-beep.wav" preload="auto" type="audio/wav">audio non supportato</audio>
+<script src="script.js"></script>
+</body>
+
+</html>
